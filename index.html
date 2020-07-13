@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>Selecting elements</legend>
+            <p>
+                <label>change from :</label>
+                <select id="myList1" onchange="changecurrencyfrom()">
+                    <option value="MYR">MYR</option>
+                    <option value="EUR">EUR</option>
+                    <option value="BRL">BRL</option>
+                    <option value="CNY">CNY</option>
+                </select>
+
+                <label>to</label>
+                <select id="myList2">
+                    <option value="">-- Select --</option>
+                </select>
+            </p>
+            <label>amount : <input type="number" id="ca" min="1" required></label>
+
+            <input type="button" value="Click me" id="btn">
+        </fieldset>
+        <p id="re"> the amout is : </p>
+    </form>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        var currencyresult = null;
+
+
+
+        function changecurrencyfrom() {
+            var result = $("#myList1").val();
+            $.getJSON('https://api.exchangeratesapi.io/latest?base=' + result, function (jd) {
+                currencyresult = jd;
+                var rates = currencyresult['rates'];
+
+                var ratesarry = Object.keys(rates);
+                for (var i = 0; i < ratesarry.length; i++) {
+                    $("#myList2").append('<option value="' + ratesarry[i] + '">' + ratesarry[i] + '</option>');
+                }
+
+
+            });
+
+        }
+
+        changecurrencyfrom();
+
+        $("#btn").click(function () {
+            var selectedchange = currencyresult['rates'][$("#myList2").val()]
+            let lastoutput = selectedchange * $("#ca").val();
+            $("#re").html(lastoutput.toFixed(3) + $("#myList2").val());
+        });
+    </script>
+</body>
+
+</html>
