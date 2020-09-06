@@ -36,39 +36,7 @@
   
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
+    
       </nav>
 
       <div class="container-fluid text-center">    
@@ -79,9 +47,9 @@
               
     <form>
         <fieldset>
-            <legend>Selecting elements</legend>
+           
             <p>
-                <label>change from :</label>
+              <input type="number" id="ca" min="1" required>
                 <select id="myList1" onchange="changecurrencyfrom()">
                     <option value="MYR">MYR</option>
                     <option value="EUR">EUR</option>
@@ -89,22 +57,35 @@
                     <option value="CNY">CNY</option>
                 </select>
 
-                <label>to</label>
+                <input type="button" value=">" id="r_dropdown">
+                <input type="button" value="<" id="r2_dropdown">
                 <select id="myList2">
                     <option value="">-- Select --</option>
                 </select>
+                <input type="button" value="Click me" id="btn">
             </p>
-            <label>amount : <input type="number" id="ca" min="1" required></label>
+       <!-- <div id ="detailrate">
+          <lable>currency =</lable>
+              <lable >amount of change</lable>
+              <lable><button ></button>  to<button></button>   Conversion</lable>
+              <lable >Last updated: 2020-09-06 14:35 UTC</lable>
 
-            <input type="button" value="Click me" id="btn">
+            </div>
+        -->
+
+            <p id="re"> All figures are example rates, which are not available to consumers and are for informational purposes only.</p>
+
+            
         </fieldset>
-        <p id="re"> the amout is : </p>
+      
     </form>
 
 </div></div>
-    <footer class="container-fluid text-center">
-        <p>Footer Text</p>
-    </footer>
+<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+  <div class="container text-center">
+    <small>Copyright &copy; Your Website</small>
+  </div>
+</footer>
     
     
     <script>  
@@ -133,7 +114,11 @@
         $("#btn").click(function () {
             var selectedchange = currencyresult['rates'][$("#myList2").val()]
             let lastoutput = selectedchange * $("#ca").val();
-            $("#re").html(lastoutput.toFixed(3) + $("#myList2").val());
+           
+
+          
+            var textNode = document.createTextNode(lastoutput.toFixed(3) + $("#myList2").val());
+            document.body.appendChild(textNode);
         });
     </script>
 </body>
