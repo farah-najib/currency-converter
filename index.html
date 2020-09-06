@@ -116,8 +116,11 @@
             let lastoutput = selectedchange * $("#ca").val();
            
 
-          
+            var textNode1 = document.createTextNode( $("#ca").val() + $("#myList1").val() +"=");
             var textNode = document.createTextNode(lastoutput.toFixed(3) + $("#myList2").val());
+
+      
+            document.body.appendChild(textNode1);
             document.body.appendChild(textNode);
         });
     </script>
