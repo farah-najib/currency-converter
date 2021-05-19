@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.5.1.js"
+     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+ </script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+ </script>
+ <link href="styles.css" rel="stylesheet" type="text/css">
+
+    <title>Demo</title> 
+ 
+</head>
+
+<body>
+
+      <div class="container">      
+              <div class="currency">
+                <select name="" id="input_currency"onchange="changecurrencyfrom()>
+                                <option value="AED">AED</option>
+                                <option value="ARS">ARS</option>
+                                <option value="AUD">AUD</option>
+                                <option value="BGN">BGN</option>
+                                <option value="BRL">BRL</option>
+                                <option value="BSD">BSD</option>
+                                <option value="CAD">CAD</option>
+                                <option value="CHF">CHF</option>
+                                <option value="CLP">CLP</option>
+                                <option value="CNY">CNY</option>
+                                <option value="COP">COP</option>
+                                <option value="CZK">CZK</option>
+                                <option value="DKK">DKK</option>
+                                <option value="DOP">DOP</option>
+                                <option value="EGP">EGP</option>
+                                <option value="EUR" selected>EUR</option>
+                                <option value="FJD">FJD</option>
+                                <option value="GBP">GBP</option>
+                                <option value="GTQ">GTQ</option>
+                                <option value="HKD">HKD</option>
+                                <option value="HRK">HRK</option>
+                                <option value="HUF">HUF</option>
+                                <option value="IDR">IDR</option>
+                                <option value="ILS">ILS</option>
+                                <option value="INR">INR</option>
+                                <option value="ISK">ISK</option>
+                                <option value="JPY">JPY</option>
+                                <option value="KRW">KRW</option>
+                                <option value="KZT">KZT</option>
+                                <option value="MXN">MXN</option>
+                                <option value="MYR">MYR</option>
+                                <option value="NOK">NOK</option>
+                                <option value="NZD">NZD</option>
+                                <option value="PAB">PAB</option>
+                                <option value="PEN">PEN</option>
+                                <option value="PHP">PHP</option>
+                                <option value="PKR">PKR</option>
+                                <option value="PLN">PLN</option>
+                                <option value="PYG">PYG</option>
+                                <option value="RON">RON</option>
+                                <option value="RUB">RUB</option>
+                                <option value="SAR">SAR</option>
+                                <option value="SEK">SEK</option>
+                                <option value="SGD">SGD</option>
+                                <option value="THB">THB</option>
+                                <option value="TRY">TRY</option>
+                                <option value="TWD">TWD</option>
+                                <option value="UAH">UAH</option>
+                                <option value="USD">USD</option>
+                                <option value="UYU">UYU</option>
+                                <option value="VND">VND</option>
+                                <option value="ZAR">ZAR</option>
+                </select>
+                <input type="number" name="" id="input_amount" value="1"onchange="calculatecurrencyfrom()>
+            </div>
+            <button id="exchange">
+              ↕   
+          </button>
+                <div class="currency">
+                  <select name="" id="output_currency">
+                      <option value="">-- Select --</option>
+                  </select>
+                  <input type="number" name="" id="output_amount" placeholder="0"/>
+              </div>
+            
+            <div class="result">
+              <div class="rate" id="rate"></div>
+
+      </div>
+            <p id="re"> All figures are example rates, which are not available to consumers and are for informational purposes only.</p>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
